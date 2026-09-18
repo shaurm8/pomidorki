@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://5l5pgcbdcbgo"]
+
+[ext_resource type="Texture2D" uid="uid://beewj5amuebof" path="res://background/background_pomidorki.png" id="1_uv124"]
+[ext_resource type="FontFile" uid="uid://hcu8i8ou0uq4" path="res://background/Cinzel/static/Cinzel-Medium.ttf" id="2_aqjk8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_21v4c"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_4dm7v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_plgnp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4evlj"]
+
+[node name="main_menu" type="Node2D" unique_id=2066436205]
+
+[node name="BackgroundPomidorki" type="Sprite2D" parent="." unique_id=320514373]
+position = Vector2(323, 183)
+texture = ExtResource("1_uv124")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1640963303]
+offset_left = 39.0
+offset_top = 40.0
+offset_right = 189.0
+offset_bottom = 351.0
+alignment = 1
+
+[node name="Button_play" type="Button" parent="VBoxContainer" unique_id=950053585]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_aqjk8")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_21v4c")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxLine_4dm7v")
+text = "play"
+
+[node name="Button_credits" type="Button" parent="VBoxContainer" unique_id=1483799894]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_aqjk8")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_plgnp")
+text = "credits"
+
+[node name="Button_quit" type="Button" parent="VBoxContainer" unique_id=1971289704]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_aqjk8")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4evlj")
+text = "quit"
