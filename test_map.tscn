@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b77yghclsdybo"]
+
+[ext_resource type="PackedScene" uid="uid://dkdr2bxipg8qi" path="res://gg.tscn" id="1_4qc02"]
+[ext_resource type="Texture2D" uid="uid://d186tbu6ot8gs" path="res://Tileset Grass Spring.png" id="1_4wuf8"]
+
+[node name="TestMap" type="Node2D" unique_id=14058948]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=645548855]
+texture = ExtResource("1_4wuf8")
+
+[node name="gg" parent="." unique_id=23276271 instance=ExtResource("1_4qc02")]

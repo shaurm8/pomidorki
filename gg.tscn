@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://dkdr2bxipg8qi"]
 
+[ext_resource type="Script" uid="uid://bqmueo0hbkg8j" path="res://gg.gd" id="1_gj5va"]
+[ext_resource type="Texture2D" uid="uid://bxc66mbnbs6hp" path="res://icon.svg" id="2_kv4wm"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3qgw"]
 size = Vector2(72, 108)
 
 [node name="gg" type="CharacterBody2D" unique_id=23276271]
+script = ExtResource("1_gj5va")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2105847362]
 shape = SubResource("RectangleShape2D_w3qgw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=925767008]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2146949791]
+texture = ExtResource("2_kv4wm")
