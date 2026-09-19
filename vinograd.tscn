@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://0d0svige2vc0"]
+
+[ext_resource type="Texture2D" uid="uid://u6pr2mniy6uk" path="res://background/Group 12.png" id="1_ix640"]
+[ext_resource type="Script" uid="uid://5pnxfts37owd" path="res://vinograd.gd" id="1_wr45d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr45d"]
+size = Vector2(2, 2)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wr45d"]
+radius = 4.0
+
+[node name="vinograd" type="CharacterBody2D" unique_id=1863589778]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_wr45d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=747953762]
+shape = SubResource("RectangleShape2D_wr45d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=331709796]
+texture = ExtResource("1_ix640")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=89631822]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=777196809]
+shape = SubResource("CircleShape2D_wr45d")

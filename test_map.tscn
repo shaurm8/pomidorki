@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dkdr2bxipg8qi" path="res://gg.tscn" id="1_4qc02"]
 [ext_resource type="Texture2D" uid="uid://d186tbu6ot8gs" path="res://Tileset Grass Spring.png" id="1_4wuf8"]
+[ext_resource type="PackedScene" uid="uid://ba723pp0jnxh7" path="res://ogurec.tscn" id="3_s02eq"]
+[ext_resource type="PackedScene" uid="uid://0d0svige2vc0" path="res://vinograd.tscn" id="4_t8dge"]
 
 [node name="TestMap" type="Node2D" unique_id=14058948]
 
@@ -9,3 +11,9 @@
 texture = ExtResource("1_4wuf8")
 
 [node name="gg" parent="." unique_id=23276271 instance=ExtResource("1_4qc02")]
+
+[node name="ogurec" parent="." unique_id=1364500990 instance=ExtResource("3_s02eq")]
+position = Vector2(100, -9)
+
+[node name="vinograd" parent="." unique_id=1863589778 instance=ExtResource("4_t8dge")]
+position = Vector2(58, -50)

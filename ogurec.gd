@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var speed: float = 150.0
-@export var follow_distance: float = 70.0
+@export var speed: float = 50.0
+@export var follow_distance: float = 40
 
 var target: Node2D
 
