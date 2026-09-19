@@ -1,14 +1,18 @@
 extends CharacterBody2D
 
+@export var max_hp: int = 25
 @export var speed: float = 65
 @export var damage: int = 10
 
-@onready var hitbox: Area2D = $Hitbox
-
+var current_hp: int
 var player: Node2D = null
 
+@onready var hitbox: Area2D = $Hitbox
+
 func _ready() -> void:
-	print("1. Враг появился на сцене!")
+	current_hp = max_hp
+	print("1. Враг появился на сцене! Здоровье: ", current_hp)
+	
 	player = get_tree().get_first_node_in_group("player") as Node2D
 	
 	if hitbox:
@@ -22,6 +26,16 @@ func _physics_process(_delta: float) -> void:
 		var direction = (player.global_position - global_position).normalized()
 		velocity = direction * speed
 		move_and_slide()
+
+func take_damage(amount: int) -> void:
+	current_hp = clampi(current_hp - amount, 0, max_hp)
+	print("Враг получил урон! Осталось здоровье: ", current_hp)
+	if current_hp <= 0:
+		die()
+
+func die() -> void:
+	print("Враг побеждён!")
+	queue_free()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	print("3. В зону вошел объект: ", body.name)

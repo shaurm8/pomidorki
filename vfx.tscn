@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bgarlx2u4vdij"]
+
+[ext_resource type="Texture2D" uid="uid://bum3t0fc5718y" path="res://other/Group 14.png" id="1_3nic7"]
+[ext_resource type="Texture2D" uid="uid://b4x5p20spgpw0" path="res://other/Group 15.png" id="2_d3krr"]
+[ext_resource type="Texture2D" uid="uid://dtil63s6b5o14" path="res://other/Group 16.png" id="3_a1upy"]
+[ext_resource type="Texture2D" uid="uid://dxdi5xfov0g04" path="res://other/Group 17.png" id="4_p0o7w"]
+[ext_resource type="Texture2D" uid="uid://b1jshhfom32od" path="res://other/Group 18.png" id="5_naru0"]
+[ext_resource type="Script" uid="uid://bsm0rbie4neh0" path="res://vfx.gd" id="6_d3krr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkbro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3nic7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d3krr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a1upy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p0o7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_naru0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 80.0
+}]
+
+[node name="vfx" type="AnimatedSprite2D" unique_id=1087867497]
+sprite_frames = SubResource("SpriteFrames_rkbro")
+script = ExtResource("6_d3krr")
