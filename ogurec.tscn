@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ba723pp0jnxh7"]
 
 [ext_resource type="Script" uid="uid://iox13ee7qywo" path="res://ogurec.gd" id="1_a5h23"]
-[ext_resource type="Texture2D" uid="uid://coamwdhsp8u8e" path="res://background/Group 9.png" id="1_p1fpd"]
+[ext_resource type="Texture2D" uid="uid://coamwdhsp8u8e" path="res://background_main.menu/Group 9.png" id="1_p1fpd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5h23"]
 size = Vector2(12, 24)

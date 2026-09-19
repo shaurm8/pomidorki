@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0d0svige2vc0"]
 
-[ext_resource type="Texture2D" uid="uid://u6pr2mniy6uk" path="res://background/Group 12.png" id="1_ix640"]
+[ext_resource type="Texture2D" uid="uid://u6pr2mniy6uk" path="res://background_main.menu/Group 12.png" id="1_ix640"]
 [ext_resource type="Script" uid="uid://5pnxfts37owd" path="res://vinograd.gd" id="1_wr45d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr45d"]
