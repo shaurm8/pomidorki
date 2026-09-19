@@ -2,9 +2,32 @@
 
 [ext_resource type="Texture2D" uid="uid://u6pr2mniy6uk" path="res://background_main.menu/Group 12.png" id="1_ix640"]
 [ext_resource type="Script" uid="uid://5pnxfts37owd" path="res://vinograd.gd" id="1_wr45d"]
+[ext_resource type="Texture2D" uid="uid://mrh8qvqy68s8" path="res://other/Frame 1.png" id="3_st5tv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr45d"]
 size = Vector2(2, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64n5y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ix640")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ix640")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_st5tv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wr45d"]
 radius = 4.0
@@ -17,8 +40,9 @@ script = ExtResource("1_wr45d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=747953762]
 shape = SubResource("RectangleShape2D_wr45d")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=331709796]
-texture = ExtResource("1_ix640")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=395428157]
+sprite_frames = SubResource("SpriteFrames_64n5y")
+animation = &"walk"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=89631822]
 collision_layer = 3

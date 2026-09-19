@@ -2,12 +2,14 @@ extends CharacterBody2D
 
 @export var max_hp: int = 25
 @export var speed: float = 65
-@export var damage: int = 10
+@export var damage: int = 7
 
 var current_hp: int
 var player: Node2D = null
 
 @onready var hitbox: Area2D = $Hitbox
+# Ссылка на узел с анимациями врага
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	current_hp = max_hp
@@ -22,10 +24,34 @@ func _ready() -> void:
 		print("ОШИБКА: Узел Hitbox не найден! Проверь имя узла в дереве сцены.")
 
 func _physics_process(_delta: float) -> void:
+	# Если игрок не найден или был удалён, пробуем найти его снова
+	if not is_instance_valid(player):
+		player = get_tree().get_first_node_in_group("player") as Node2D
+
 	if is_instance_valid(player):
 		var direction = (player.global_position - global_position).normalized()
 		velocity = direction * speed
 		move_and_slide()
+	else:
+		velocity = Vector2.ZERO
+
+	update_animation()
+
+# Функция управления анимациями и разворотом
+func update_animation() -> void:
+	if not animated_sprite:
+		return
+
+	if velocity.length() > 0.1:
+		animated_sprite.play("walk")
+		
+		# Разворачиваем спрайт в зависимости от движения влево/вправо
+		if velocity.x < 0:
+			animated_sprite.flip_h = true
+		elif velocity.x > 0:
+			animated_sprite.flip_h = false
+	else:
+		animated_sprite.play("idle")
 
 func take_damage(amount: int) -> void:
 	current_hp = clampi(current_hp - amount, 0, max_hp)

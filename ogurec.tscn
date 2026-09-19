@@ -1,10 +1,49 @@
 [gd_scene format=3 uid="uid://ba723pp0jnxh7"]
 
 [ext_resource type="Script" uid="uid://iox13ee7qywo" path="res://ogurec.gd" id="1_a5h23"]
-[ext_resource type="Texture2D" uid="uid://coamwdhsp8u8e" path="res://background_main.menu/Group 9.png" id="1_p1fpd"]
+[ext_resource type="Texture2D" uid="uid://cb4el5alxpjfo" path="res://other/Group 43.png" id="2_jn0rt"]
+[ext_resource type="Texture2D" uid="uid://c8yyja2dyeu37" path="res://other/Group 38.png" id="3_gma6i"]
+[ext_resource type="Texture2D" uid="uid://cnufdfjcpa6ch" path="res://other/Group 39.png" id="4_aluen"]
+[ext_resource type="Texture2D" uid="uid://c1dypfnq4ga5p" path="res://other/Group 40.png" id="5_5l11b"]
+[ext_resource type="Texture2D" uid="uid://souxs8wql3ww" path="res://other/Group 41.png" id="6_xdov3"]
+[ext_resource type="Texture2D" uid="uid://v4u5bsbr7nol" path="res://other/Group 42.png" id="7_e2qul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5h23"]
 size = Vector2(12, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1fpd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jn0rt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gma6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aluen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5l11b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xdov3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e2qul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jn0rt")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [node name="ogurec" type="CharacterBody2D" unique_id=1364500990]
 collision_layer = 0
@@ -14,5 +53,6 @@ script = ExtResource("1_a5h23")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=284298122]
 shape = SubResource("RectangleShape2D_a5h23")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1864497191]
-texture = ExtResource("1_p1fpd")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1027640775]
+sprite_frames = SubResource("SpriteFrames_p1fpd")
+animation = &"walk"
