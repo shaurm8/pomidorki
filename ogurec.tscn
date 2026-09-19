@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ba723pp0jnxh7"]
+
+[ext_resource type="Script" uid="uid://iox13ee7qywo" path="res://ogurec.gd" id="1_a5h23"]
+[ext_resource type="Texture2D" uid="uid://coamwdhsp8u8e" path="res://background/Group 9.png" id="1_p1fpd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5h23"]
+size = Vector2(12, 24)
+
+[node name="ogurec" type="CharacterBody2D" unique_id=1364500990]
+script = ExtResource("1_a5h23")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=284298122]
+shape = SubResource("RectangleShape2D_a5h23")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1864497191]
+texture = ExtResource("1_p1fpd")
