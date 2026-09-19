@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="immortal"
+run/main_scene="uid://5l5pgcbdcbgo"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Cinzel-ExtraBold.ttf-805fd0fe979ba049999f6eae
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
