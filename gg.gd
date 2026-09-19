@@ -11,6 +11,8 @@ var current_hp: int
 var is_attacking: bool = false
 
 @onready var katana_area: Area2D = $KatanaArea
+# 1. Ссылка на узел с анимациями (убедитесь, что название совпадает с вашим узлом в дереве сцены)
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	add_to_group("player")
@@ -19,18 +21,39 @@ func _ready() -> void:
 		katana_area.monitoring = true
 
 func _physics_process(delta: float) -> void:
-	# Считываем ввод WASD всегда, чтобы движение не "спотыкалось"
+	# Считываем вектор движения (используем стандартный ui_ или ваши "a","d","w","s")
 	var direction := Input.get_vector("a", "d", "w", "s")
 
 	if is_attacking:
-		# Плавно гасим импульс рывка до той скорости и направления, куда ты жмёшь WASD!
 		var target_velocity = direction * speed
 		velocity = velocity.move_toward(target_velocity, speed * delta * 10.0)
 		move_and_slide()
+		update_animation(direction) # Обновляем анимацию во время атаки/рывка
 		return
 
 	velocity = direction * speed
 	move_and_slide()
+	
+	# 2. Обновляем анимацию при обычном движении
+	update_animation(direction)
+
+# Функция переключения анимаций
+func update_animation(direction: Vector2) -> void:
+	if not animated_sprite:
+		return
+		
+	if direction != Vector2.ZERO:
+		# бегание!!!!!!!!!!!!!!!!
+		animated_sprite.play("run")
+		
+		# попорачивание!!!!!!!!!
+		if direction.x < 0:
+			animated_sprite.flip_h = true
+		elif direction.x > 0:
+			animated_sprite.flip_h = false
+	else:
+		# стояние!!!!!!!!!!
+		animated_sprite.play("idle")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -43,7 +66,6 @@ func attack() -> void:
 	var direction_to_mouse = (get_global_mouse_position() - global_position).normalized()
 	var attack_angle := direction_to_mouse.angle()
 	
-	# Импульс рывка
 	velocity = direction_to_mouse * lunge_speed
 	
 	if katana_area:
