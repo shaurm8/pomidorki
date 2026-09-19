@@ -14,5 +14,5 @@ shape = SubResource("RectangleShape2D_w3qgw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=925767008]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2146949791]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2146949791 groups=["player"]]
 texture = ExtResource("2_kv4wm")
