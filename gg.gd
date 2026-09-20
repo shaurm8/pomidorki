@@ -18,6 +18,8 @@ extends CharacterBody2D
 # Длительность неуязвимости при получении урона (в секундах)
 @export var invincibility_duration: float = 1.5
 
+var can_move = true
+var is_paused = false
 var current_hp: int
 var is_attacking: bool = false
 var is_invincible: bool = false
@@ -36,6 +38,8 @@ var is_vfx_flipped: bool = false
 @onready var hp_bar: ProgressBar = $ProgressBar
 
 func _ready() -> void:
+	$CanvasLayer/pause.visible = false
+	Engine.time_scale = 1
 	add_to_group("player")
 	current_hp = max_hp
 	
@@ -45,6 +49,17 @@ func _ready() -> void:
 		katana_area.monitoring = true
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		is_paused = !is_paused
+		$CanvasLayer/pause.visible = true
+		Engine.time_scale = 0 if is_paused else 1
+		can_move = not is_paused
+	if Global.resume:
+		is_paused = false
+		can_move = true
+		$CanvasLayer/pause.visible = false
+		Engine.time_scale = 1
+		Global.resume = false
 	var direction := Input.get_vector("a", "d", "w", "s")
 
 	if direction != Vector2.ZERO:

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dj85lqfxvnkf0"]
+
+[ext_resource type="FontFile" uid="uid://hcu8i8ou0uq4" path="res://background_main.menu/Cinzel/static/Cinzel-Medium.ttf" id="1_0mw5b"]
+[ext_resource type="Script" uid="uid://dmmigfutkry2m" path="res://pausemenu.gd" id="1_bs354"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mw5b"]
+bg_color = Color(0, 0, 0, 0.6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bs354"]
+font_size = 92
+
+[node name="pause" type="Control" unique_id=1426373833]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bs354")
+metadata/_edit_vertical_guides_ = [654.0, 1269.0]
+metadata/_edit_horizontal_guides_ = [236.0, 392.0, 545.0, 699.0]
+
+[node name="Panel" type="Panel" parent="." unique_id=2121728357]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -600.0
+offset_right = 960.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0mw5b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1189320593]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 155.0
+offset_right = 1369.0
+offset_bottom = 1143.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1973494682]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0mw5b")
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_bs354")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/Label" unique_id=1470853803]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 206.0
+offset_right = 716.82355
+offset_bottom = 362.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 51
+text = "RESUME"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer/Label" unique_id=1524842350]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 419.0
+offset_right = 717.0
+offset_bottom = 574.0
+theme_override_fonts/font = ExtResource("1_0mw5b")
+theme_override_font_sizes/font_size = 51
+text = "MENU"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Label/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Label/Button2" to="." method="_on_button_2_pressed"]
