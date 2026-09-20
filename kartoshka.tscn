@@ -1,3 +1,75 @@
 [gd_scene format=3 uid="uid://br8yvw2ofltw"]
 
+[ext_resource type="Script" uid="uid://b4tiis0f7f545" path="res://kartoshka.gd" id="1_8ryfn"]
+[ext_resource type="Texture2D" uid="uid://bhbqvk4k6njut" path="res://other/Group 48.png" id="2_8ryfn"]
+[ext_resource type="Texture2D" uid="uid://ww54c4kmu0gb" path="res://other/Group 49.png" id="3_62cow"]
+[ext_resource type="Texture2D" uid="uid://cg4ucn2e2p315" path="res://other/Group 50.png" id="4_rvmh0"]
+[ext_resource type="Texture2D" uid="uid://ddti7g15ow40x" path="res://other/Group 51.png" id="5_aou8l"]
+[ext_resource type="Texture2D" uid="uid://c6lsg5mobje6x" path="res://other/Group 52.png" id="6_f8ryg"]
+[ext_resource type="Texture2D" uid="uid://dec32tln8o5ug" path="res://other/Group 53.png" id="7_lmjar"]
+[ext_resource type="Texture2D" uid="uid://dfy435pem3wl7" path="res://other/Group 54.png" id="8_1loes"]
+[ext_resource type="Texture2D" uid="uid://c7f2f6llqtjtu" path="res://other/Group 55.png" id="9_gk7i8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x206x"]
+size = Vector2(12, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ryfn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ryfn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8ryfn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8ryfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_62cow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rvmh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aou8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f8ryg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lmjar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1loes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gk7i8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [node name="kartoshka" type="CharacterBody2D" unique_id=1260799385]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_8ryfn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779179562]
+shape = SubResource("RectangleShape2D_x206x")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=793957326]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=738257918]
+shape = SubResource("CircleShape2D_8ryfn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1306670568]
+sprite_frames = SubResource("SpriteFrames_8ryfn")
+animation = &"walk"

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://0d0svige2vc0"]
 
-[ext_resource type="Texture2D" uid="uid://u6pr2mniy6uk" path="res://background_main.menu/Group 12.png" id="1_ix640"]
 [ext_resource type="Script" uid="uid://5pnxfts37owd" path="res://vinograd.gd" id="1_wr45d"]
-[ext_resource type="Texture2D" uid="uid://mrh8qvqy68s8" path="res://other/Frame 1.png" id="3_st5tv"]
+[ext_resource type="Texture2D" uid="uid://o54k6egohdwp" path="res://other/vino.png" id="2_st5tv"]
+[ext_resource type="Texture2D" uid="uid://bdog5hy5y62oi" path="res://other/vino1.png" id="3_64n5y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr45d"]
 size = Vector2(2, 2)
@@ -11,7 +11,7 @@ size = Vector2(2, 2)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ix640")
+"texture": ExtResource("2_st5tv")
 }],
 "loop": true,
 "name": &"idle",
@@ -19,10 +19,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ix640")
+"texture": ExtResource("3_64n5y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_st5tv")
+"texture": ExtResource("2_st5tv")
 }],
 "loop": true,
 "name": &"walk",
