@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var max_hp: int = 25
-@export var speed: float = 80
-@export var damage: int = 7
+@export var max_hp: int = 50
+@export var speed: float = 50
+@export var damage: int = 13
 
 var current_hp: int
 var player: Node2D = null

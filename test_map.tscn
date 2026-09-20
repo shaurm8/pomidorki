@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://mjyw2sw6765f" path="res://map_tileset/Tilesets/TilesetNature.png" id="6_5354r"]
 [ext_resource type="Texture2D" uid="uid://t6gbhf3g1ibk" path="res://map_tileset/Tilesets/TilesetWater.png" id="7_yobqo"]
 [ext_resource type="Texture2D" uid="uid://dmeex8oouljb0" path="res://map_tileset/Tilesets/TilesetVillageAbandoned.png" id="8_dj26u"]
+[ext_resource type="PackedScene" uid="uid://br8yvw2ofltw" path="res://kartoshka.tscn" id="9_bu3ac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1wgsg"]
 texture = ExtResource("4_gqtbx")
@@ -2142,3 +2143,6 @@ position = Vector2(100, -9)
 
 [node name="vinograd" parent="." unique_id=1863589778 instance=ExtResource("4_t8dge")]
 position = Vector2(58, -50)
+
+[node name="kartoshka" parent="." unique_id=1260799385 instance=ExtResource("9_bu3ac")]
+position = Vector2(88, 96)
