@@ -68,3 +68,4 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and body.has_method("take_damage"):
 		body.take_damage(damage)
 		print("4. Урон нанесен! Здоровье игрока: ", body.current_hp)
+#,liauuh
