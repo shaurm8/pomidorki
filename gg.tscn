@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" path="res://vfx.tscn" id="2_kv4wm"]
 [ext_resource type="Texture2D" uid="uid://c8vpoclg81fp6" path="res://sprite_fruct/SpriteV5.5.png" id="4_xnkbp"]
 [ext_resource type="PackedScene" uid="uid://dj85lqfxvnkf0" path="res://pausemenu.tscn" id="5_3p06a"]
+[ext_resource type="Texture2D" uid="uid://cj61lh7gysrfm" path="res://sprites/Sprite-hp_bar3.png" id="5_d5do3"]
+[ext_resource type="Texture2D" uid="uid://dcs8d301t32bi" path="res://sprites/Sprite-hp_bar2.png" id="5_g0rbr"]
+[ext_resource type="Texture2D" uid="uid://cmh0wb4qb0uos" path="res://sprites/Sprite-hp_bar1.png" id="6_d5do3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xnkbp"]
 atlas = ExtResource("4_xnkbp")
@@ -95,12 +98,6 @@ size = Vector2(34, 28)
 radius = 23.0
 height = 60.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa3hd"]
-bg_color = Color(0.3500639, 0.35006398, 0.3500638, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnkbp"]
-bg_color = Color(0.97464293, 0.17376995, 0.22323373, 1)
-
 [node name="gg" type="CharacterBody2D" unique_id=23276271 groups=["player"]]
 script = ExtResource("1_gj5va")
 vfx_scene = ExtResource("2_kv4wm")
@@ -132,15 +129,16 @@ position = Vector2(41, -1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_gj5va")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1804025066]
-offset_left = -247.0
-offset_top = -152.0
-offset_right = -100.0
-offset_bottom = -129.0
-theme_override_styles/background = SubResource("StyleBoxFlat_oa3hd")
-theme_override_styles/fill = SubResource("StyleBoxFlat_xnkbp")
-show_percentage = false
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1871836639]
 
 [node name="pause" parent="CanvasLayer" unique_id=1426373833 instance=ExtResource("5_3p06a")]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2102689897]
+offset_left = -270.0
+offset_top = -170.0
+offset_right = -176.0
+offset_bottom = -128.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_d5do3")
+texture_over = ExtResource("5_g0rbr")
+texture_progress = ExtResource("6_d5do3")
