@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var speed: float = 300.0
-@export var damage: int = 1
+@export var damage: int = 25
 @export var lifetime: float = 5.0
 
 # Направление полета (по умолчанию вправо)
