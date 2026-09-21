@@ -51,7 +51,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		is_paused = !is_paused
-		$CanvasLayer/pause.visible = true
+		$CanvasLayer/pause.visible = is_paused
 		Engine.time_scale = 0 if is_paused else 1
 		can_move = not is_paused
 	if Global.resume:
