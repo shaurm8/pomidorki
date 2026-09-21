@@ -92,8 +92,8 @@ animations = [{
 size = Vector2(34, 28)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gj5va"]
-radius = 17.0
-height = 44.0
+radius = 23.0
+height = 60.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa3hd"]
 bg_color = Color(0.3500639, 0.35006398, 0.3500638, 1)
@@ -128,7 +128,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KatanaArea" unique_id=664162442]
-position = Vector2(34, -4)
+position = Vector2(41, -1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_gj5va")
 

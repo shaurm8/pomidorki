@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c5hb2hix7nw6k"
-path="res://.godot/imported/Cinzel-Black.ttf-eb9740ee2bc9142526200a6208748020.fontdata"
+uid="uid://b8m2fedlei52r"
+path="res://.godot/imported/Cinzel-Regular.ttf-f2796759c82617a13a66ec8944bc8afa.fontdata"
 
 [deps]
 
-source_file="res://background_main.menu/Cinzel/static/Cinzel-Black.ttf"
-dest_files=["res://.godot/imported/Cinzel-Black.ttf-eb9740ee2bc9142526200a6208748020.fontdata"]
+source_file="res://background/Cinzel/static/Cinzel-Regular.ttf"
+dest_files=["res://.godot/imported/Cinzel-Regular.ttf-f2796759c82617a13a66ec8944bc8afa.fontdata"]
 
 [params]
 

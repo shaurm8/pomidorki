@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coamwdhsp8u8e"
-path="res://.godot/imported/Group 9.png-3fdf86d4e3442c068c5a2b4521e3a20a.ctex"
+uid="uid://beewj5amuebof"
+path="res://.godot/imported/background_pomidorki.png-9cdc3bab3f0c42b9bfb22e57022afe34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://background_main.menu/Group 9.png"
-dest_files=["res://.godot/imported/Group 9.png-3fdf86d4e3442c068c5a2b4521e3a20a.ctex"]
+source_file="res://background/background_pomidorki.png"
+dest_files=["res://.godot/imported/background_pomidorki.png-9cdc3bab3f0c42b9bfb22e57022afe34.ctex"]
 
 [params]
 

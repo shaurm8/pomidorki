@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://31ppcjmgdtib"]
+
+[ext_resource type="Texture2D" uid="uid://beewj5amuebof" path="res://background/background_pomidorki.png" id="1_um7sv"]
+
+[node name="BackgroundPomidorki" type="Sprite2D" unique_id=905423487]
+position = Vector2(960.00006, 603.00006)
+scale = Vector2(2.9999998, 3.327778)
+texture = ExtResource("1_um7sv")

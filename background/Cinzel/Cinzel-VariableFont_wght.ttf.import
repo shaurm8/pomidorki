@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cwpp1j47x7cs1"
-path="res://.godot/imported/Cinzel-SemiBold.ttf-40953a567e6285f4c447edc23a2abf42.fontdata"
+uid="uid://c6rrcfqiuernx"
+path="res://.godot/imported/Cinzel-VariableFont_wght.ttf-57508d87e1719632f9a4fc6c5220d03e.fontdata"
 
 [deps]
 
-source_file="res://background_main.menu/Cinzel/static/Cinzel-SemiBold.ttf"
-dest_files=["res://.godot/imported/Cinzel-SemiBold.ttf-40953a567e6285f4c447edc23a2abf42.fontdata"]
+source_file="res://background/Cinzel/Cinzel-VariableFont_wght.ttf"
+dest_files=["res://.godot/imported/Cinzel-VariableFont_wght.ttf-57508d87e1719632f9a4fc6c5220d03e.fontdata"]
 
 [params]
 

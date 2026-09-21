@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://5l5pgcbdcbgo"]
 
-[ext_resource type="Script" uid="uid://ddrwuxhuyp4d7" path="res://background_main.menu/main_menu.gd" id="1_aqjk8"]
-[ext_resource type="Texture2D" uid="uid://beewj5amuebof" path="res://background_main.menu/background_pomidorki.png" id="1_uv124"]
-[ext_resource type="FontFile" uid="uid://hcu8i8ou0uq4" path="res://background_main.menu/Cinzel/static/Cinzel-Medium.ttf" id="2_aqjk8"]
+[ext_resource type="Script" uid="uid://ddrwuxhuyp4d7" path="res://background/main_menu.gd" id="1_aqjk8"]
+[ext_resource type="Texture2D" uid="uid://beewj5amuebof" path="res://background/background_pomidorki.png" id="1_uv124"]
+[ext_resource type="FontFile" uid="uid://hcu8i8ou0uq4" path="res://background/Cinzel/static/Cinzel-Medium.ttf" id="2_aqjk8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uv124"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -70,4 +70,5 @@ position = Vector2(322, 181)
 zoom = Vector2(3.1, 3.4)
 
 [connection signal="pressed" from="VBoxContainer/Button_play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_credits" to="." method="_on_button_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_quit" to="." method="_on_button_quit_pressed"]

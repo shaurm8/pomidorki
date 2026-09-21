@@ -4,4 +4,4 @@ func _on_button_pressed() -> void:
 	Global.resume = true
 
 func _on_button_2_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://main_menu.tscn")
