@@ -35,7 +35,7 @@ var is_vfx_flipped: bool = false
 
 @onready var katana_area: Area2D = $KatanaArea
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var hp_bar: ProgressBar = $ProgressBar
+@onready var hp_bar: TextureProgressBar = $TextureProgressBar
 
 func _ready() -> void:
 	$CanvasLayer/pause.visible = false
@@ -51,7 +51,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		is_paused = !is_paused
-		$CanvasLayer/pause.visible = true
+		$CanvasLayer/pause.visible = is_paused
 		Engine.time_scale = 0 if is_paused else 1
 		can_move = not is_paused
 	if Global.resume:

@@ -134,10 +134,10 @@ shape = SubResource("CapsuleShape2D_gj5va")
 [node name="pause" parent="CanvasLayer" unique_id=1426373833 instance=ExtResource("5_3p06a")]
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2102689897]
-offset_left = -270.0
-offset_top = -170.0
-offset_right = -176.0
-offset_bottom = -128.0
+offset_left = -274.0
+offset_top = -171.0
+offset_right = -168.02173
+offset_bottom = -132.0
 nine_patch_stretch = true
 texture_under = ExtResource("5_d5do3")
 texture_over = ExtResource("5_g0rbr")
