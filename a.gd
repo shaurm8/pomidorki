@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var speed: float = 300.0
-@export var heal_amount: int = 7
+@export var heal_amount: int = 2
 @export var lifetime: float = 5.0
 
 # Направление полета (по умолчанию вправо)
