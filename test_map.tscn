@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://t6gbhf3g1ibk" path="res://map_tileset/Tilesets/TilesetWater.png" id="7_yobqo"]
 [ext_resource type="Texture2D" uid="uid://dmeex8oouljb0" path="res://map_tileset/Tilesets/TilesetVillageAbandoned.png" id="8_dj26u"]
 [ext_resource type="PackedScene" uid="uid://br8yvw2ofltw" path="res://kartoshka.tscn" id="9_bu3ac"]
+[ext_resource type="PackedScene" uid="uid://vvxuxfrjvag4" path="res://evil_o.tscn" id="10_5354r"]
+[ext_resource type="PackedScene" uid="uid://b1c3dby1rxa71" path="res://area_e.tscn" id="11_yobqo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1wgsg"]
 texture = ExtResource("4_gqtbx")
@@ -2146,3 +2148,9 @@ position = Vector2(58, -50)
 
 [node name="kartoshka" parent="." unique_id=1260799385 instance=ExtResource("9_bu3ac")]
 position = Vector2(88, 96)
+
+[node name="EvilO" parent="." unique_id=1016801953 instance=ExtResource("10_5354r")]
+position = Vector2(-161, -63)
+
+[node name="areaE" parent="." unique_id=2143388890 instance=ExtResource("11_yobqo")]
+position = Vector2(5, 1)

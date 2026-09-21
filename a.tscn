@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b5e8t22rvllw4"]
+
+[ext_resource type="Script" uid="uid://di1td3tmgp1cv" path="res://a.gd" id="1_2f6dx"]
+[ext_resource type="Texture2D" uid="uid://c1jhaum0tjk13" path="res://hill.png" id="1_whoah"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2f6dx"]
+radius = 4.0
+
+[node name="a" type="Area2D" unique_id=1116046096]
+script = ExtResource("1_2f6dx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1880343252]
+texture = ExtResource("1_whoah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=445821380]
+shape = SubResource("CircleShape2D_2f6dx")

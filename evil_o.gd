@@ -1,18 +1,14 @@
 extends CharacterBody2D
 
-@export var max_hp: int = 50
-@export var speed: float = 50
-@export var damage: int = 13
-
-# Перетащи сюда сцену своего фаербола в Инспекторе
-@export var fireball_scene: PackedScene 
-# Интервал выстрелов в секундах
-@export var shoot_interval: float = 2.5 
+@export var max_hp: int = 60
+@export var speed: float = 80
+@export var damage: int = 7
 
 var current_hp: int
 var player: Node2D = null
 
 @onready var hitbox: Area2D = $Hitbox
+# Ссылка на узел с анимациями врага
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
@@ -27,10 +23,8 @@ func _ready() -> void:
 	else:
 		print("ОШИБКА: Узел Hitbox не найден! Проверь имя узла в дереве сцены.")
 
-	# Создаём и запускаем таймер для стрельбы
-	setup_shoot_timer()
-
 func _physics_process(_delta: float) -> void:
+	# Если игрок не найден или был удалён, пробуем найти его снова
 	if not is_instance_valid(player):
 		player = get_tree().get_first_node_in_group("player") as Node2D
 
@@ -43,32 +37,15 @@ func _physics_process(_delta: float) -> void:
 
 	update_animation()
 
-func setup_shoot_timer() -> void:
-	var timer = Timer.new()
-	timer.wait_time = shoot_interval
-	timer.autostart = true
-	timer.timeout.connect(shoot)
-	add_child(timer)
-
-func shoot() -> void:
-	# Стреляем только если есть сцена снаряда и игрок жив
-	if not fireball_scene or not is_instance_valid(player):
-		return
-
-	var fireball = fireball_scene.instantiate()
-	fireball.global_position = global_position
-	# Задаём направление полета в сторону игрока
-	fireball.direction = (player.global_position - global_position).normalized()
-	
-	# Добавляем снаряд на сцену (на уровень, а не дочерним узлом к врагу)
-	get_parent().add_child(fireball)
-
+# Функция управления анимациями и разворотом
 func update_animation() -> void:
 	if not animated_sprite:
 		return
 
 	if velocity.length() > 0.1:
 		animated_sprite.play("walk")
+		
+		# Разворачиваем спрайт в зависимости от движения влево/вправо
 		if velocity.x < 0:
 			animated_sprite.flip_h = true
 		elif velocity.x > 0:
@@ -80,18 +57,17 @@ func take_damage(amount: int) -> void:
 	current_hp = clampi(current_hp - amount, 0, max_hp)
 	print("Враг получил урон! Осталось здоровье: ", current_hp)
 	
-	# Запускаем мигание красным
+	# Запускаем вспышку красным
 	flash_red()
 	
 	if current_hp <= 0:
 		die()
 
-# Функция для эффекта получения урона
+# Функция для эффекта мигания красным
 func flash_red() -> void:
 	if not animated_sprite:
 		return
 		
-	# Окрашиваем в красноватый цвет и за 0.15 сек возвращаем обычный цвет
 	animated_sprite.modulate = Color(1.0, 0.2, 0.2)
 	var tween = create_tween()
 	tween.tween_property(animated_sprite, "modulate", Color.WHITE, 0.15)

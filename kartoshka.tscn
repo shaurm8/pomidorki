@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4tiis0f7f545" path="res://kartoshka.gd" id="1_8ryfn"]
 [ext_resource type="Texture2D" uid="uid://bhbqvk4k6njut" path="res://other/Group 48.png" id="2_8ryfn"]
+[ext_resource type="PackedScene" uid="uid://d1oa8hn3fpulf" path="res://projectile.tscn" id="2_62cow"]
 [ext_resource type="Texture2D" uid="uid://ww54c4kmu0gb" path="res://other/Group 49.png" id="3_62cow"]
 [ext_resource type="Texture2D" uid="uid://cg4ucn2e2p315" path="res://other/Group 50.png" id="4_rvmh0"]
 [ext_resource type="Texture2D" uid="uid://ddti7g15ow40x" path="res://other/Group 51.png" id="5_aou8l"]
@@ -52,13 +53,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [node name="kartoshka" type="CharacterBody2D" unique_id=1260799385]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_8ryfn")
+fireball_scene = ExtResource("2_62cow")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779179562]
 shape = SubResource("RectangleShape2D_x206x")

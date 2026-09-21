@@ -35,7 +35,7 @@ var is_vfx_flipped: bool = false
 
 @onready var katana_area: Area2D = $KatanaArea
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var hp_bar: ProgressBar = $ProgressBar
+@onready var hp_bar: TextureProgressBar = $TextureProgressBar
 
 func _ready() -> void:
 	$CanvasLayer/pause.visible = false
@@ -230,6 +230,12 @@ func take_damage(amount: int) -> void:
 
 	trigger_invincibility()
 
+# Функция лечения
+func heal(amount: int) -> void:
+	current_hp = clampi(current_hp + amount, 0, max_hp)
+	update_hp_bar()
+	print("Ура! Подлечились! Здоровье: ", current_hp)
+
 func trigger_invincibility() -> void:
 	is_invincible = true
 	
@@ -257,4 +263,6 @@ func update_hp_bar() -> void:
 		hp_bar.value = current_hp
 
 func die() -> void:
-	queue_free()
+	print("Игрок погиб! Перезагружаем уровень...")
+	Engine.time_scale = 1.0 # Восстанавливаем скорость игры, если она была изменена
+	get_tree().reload_current_scene()

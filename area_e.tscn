@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b1c3dby1rxa71"]
+
+[ext_resource type="Script" uid="uid://pcp0rckbe8ah" path="res://area_e.gd" id="1_qx11o"]
+[ext_resource type="PackedScene" uid="uid://vvxuxfrjvag4" path="res://evil_o.tscn" id="2_mmd2n"]
+[ext_resource type="PackedScene" uid="uid://0d0svige2vc0" path="res://vinograd.tscn" id="3_eff4k"]
+[ext_resource type="PackedScene" uid="uid://br8yvw2ofltw" path="res://kartoshka.tscn" id="4_eff4k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rwt2"]
+size = Vector2(1296, 1388)
+
+[node name="areaE" type="Node2D" unique_id=2143388890]
+script = ExtResource("1_qx11o")
+enemy_scenes = Array[PackedScene]([ExtResource("2_mmd2n"), ExtResource("3_eff4k"), ExtResource("4_eff4k")])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1513811151]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1297672965]
+shape = SubResource("RectangleShape2D_3rwt2")

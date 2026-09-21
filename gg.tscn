@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkdr2bxipg8qi"]
 
 [ext_resource type="Script" uid="uid://bqmueo0hbkg8j" path="res://gg.gd" id="1_gj5va"]
-[ext_resource type="PackedScene" path="res://vfx.tscn" id="2_kv4wm"]
+[ext_resource type="PackedScene" uid="uid://bgarlx2u4vdij" path="res://vfx.tscn" id="2_kv4wm"]
 [ext_resource type="Texture2D" uid="uid://c8vpoclg81fp6" path="res://sprite_fruct/SpriteV5.5.png" id="4_xnkbp"]
 [ext_resource type="PackedScene" uid="uid://dj85lqfxvnkf0" path="res://pausemenu.tscn" id="5_3p06a"]
 [ext_resource type="Texture2D" uid="uid://cj61lh7gysrfm" path="res://sprites/Sprite-hp_bar3.png" id="5_d5do3"]
@@ -92,7 +92,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3qgw"]
-size = Vector2(34, 28)
+size = Vector2(20, 18)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gj5va"]
 radius = 23.0

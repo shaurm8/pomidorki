@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ba723pp0jnxh7"]
 
 [ext_resource type="Script" uid="uid://iox13ee7qywo" path="res://ogurec.gd" id="1_a5h23"]
+[ext_resource type="PackedScene" uid="uid://b5e8t22rvllw4" path="res://a.tscn" id="2_gma6i"]
 [ext_resource type="Texture2D" uid="uid://cb4el5alxpjfo" path="res://other/Group 43.png" id="2_jn0rt"]
 [ext_resource type="Texture2D" uid="uid://c8yyja2dyeu37" path="res://other/Group 38.png" id="3_gma6i"]
 [ext_resource type="Texture2D" uid="uid://cnufdfjcpa6ch" path="res://other/Group 39.png" id="4_aluen"]
@@ -46,9 +47,10 @@ animations = [{
 }]
 
 [node name="ogurec" type="CharacterBody2D" unique_id=1364500990]
-collision_layer = 0
-collision_mask = 0
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_a5h23")
+heal_bullet_scene = ExtResource("2_gma6i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=284298122]
 shape = SubResource("RectangleShape2D_a5h23")

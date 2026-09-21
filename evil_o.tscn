@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://vvxuxfrjvag4"]
+
+[ext_resource type="Texture2D" uid="uid://dc55ppv64euex" path="res://new folder/Group 75.png" id="1_fiybg"]
+[ext_resource type="Script" uid="uid://54hatllt0snc" path="res://evil_o.gd" id="1_ho34n"]
+[ext_resource type="Texture2D" uid="uid://yqk732ruobkw" path="res://new folder/Group 76.png" id="2_ho34n"]
+[ext_resource type="Texture2D" uid="uid://2vxhc0yxcpd2" path="res://new folder/Group 77.png" id="3_sfh7v"]
+[ext_resource type="Texture2D" uid="uid://b4axfregeiko2" path="res://new folder/Group 78.png" id="4_cf44g"]
+[ext_resource type="Texture2D" uid="uid://c1ggvhrshiaj3" path="res://new folder/Group 79.png" id="5_g22cj"]
+[ext_resource type="Texture2D" uid="uid://cdqa6n34mae2y" path="res://new folder/Group 80.png" id="6_sr8dw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fiybg"]
+size = Vector2(6, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6xe7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fiybg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fiybg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ho34n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sfh7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cf44g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g22cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sr8dw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fiybg"]
+radius = 5.0
+height = 24.0
+
+[node name="EvilO" type="CharacterBody2D" unique_id=1016801953]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_ho34n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=388054461]
+shape = SubResource("RectangleShape2D_fiybg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=70871138]
+sprite_frames = SubResource("SpriteFrames_v6xe7")
+animation = &"idle"
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1812252813]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=128857775]
+shape = SubResource("CapsuleShape2D_fiybg")
